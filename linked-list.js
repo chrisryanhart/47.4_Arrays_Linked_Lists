@@ -88,17 +88,6 @@ class LinkedList {
       currentNode = currentNode.next;
     }
 
-    
-    
-
-
-    // have to find the value previous to last 
-
-    // loop through head and find where next === the tail node
-
-
-    console.log('test');
-
   }
 
   /** shift(): return & remove first item. */
@@ -235,7 +224,24 @@ class LinkedList {
   /** average(): return an average of all values in the list */
 
   average() {
+    let sum = 0;
+    let count = 0;
+
+
+    if(this.head === null) return 0;
+
+    let i = 0;
+    let currentNode = this.head;
+
+    while(currentNode){
+      sum += currentNode.val;
+      count ++;
+
+      currentNode = currentNode.next;
+    }
     
+    let average = sum/count;
+    return average;
   }
 }
 
