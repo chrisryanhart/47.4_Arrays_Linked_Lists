@@ -133,16 +133,27 @@ describe("removeAt", function() {
     expect(lst.head).toBe(null);
     expect(lst.tail).toBe(null);
   });
-});
 
-describe("average", function() {
-  it("calculates the average of items in a list", function() {
-    let lst = new LinkedList([2, 3, 1, 1, 7, 6, 9]);
-    expect(lst.average()).toBeCloseTo(4.1429, 4);
+  it("removes from multi item list", function() {
+    let lst = new LinkedList([5, 10, 15, 20]);
+
+    lst.removeAt(2);
+    expect(lst.length).toBe(3);
+    expect(lst.head.val).toBe(5);
+    expect(lst.head.next.val).toBe(10);
+    expect(lst.head.next.next.val).toBe(20);
   });
 
-  it("returns 0 for empty lists", function() {
-    let lst = new LinkedList();
-    expect(lst.average()).toBe(0);
-  });
 });
+
+// describe("average", function() {
+//   it("calculates the average of items in a list", function() {
+//     let lst = new LinkedList([2, 3, 1, 1, 7, 6, 9]);
+//     expect(lst.average()).toBeCloseTo(4.1429, 4);
+//   });
+
+//   it("returns 0 for empty lists", function() {
+//     let lst = new LinkedList();
+//     expect(lst.average()).toBe(0);
+//   });
+// });
